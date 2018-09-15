@@ -432,9 +432,11 @@ if (foo) {
 		bar = something( bar );
 		console.log( bar );
 	}
+	console.log( bar ); // ReferenceError
 }
 
 console.log( bar ); // ReferenceError
+
 ```
 
 We can create an arbitrary block for `let` to bind to by simply including a `{ .. }` pair anywhere a statement is valid grammar. In this case, we've made an explicit block *inside* the if-statement, which may be easier as a whole block to move around later in refactoring, without affecting the position and semantics of the enclosing if-statement.
